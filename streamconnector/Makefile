@@ -17,7 +17,7 @@ CXX           = g++
 DEFINES       = -DSTREAMCONNECTOR_LIBRARY -DCOMPILER_GCC -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_GUI_LIB -DQT_SQL_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -Wno-unused-parameter -Wno-sign-compare -Wno-unused-local-typedefs -Wno-deprecated-declarations -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I. -I../ilwiscore/include -I../ilwiscore/include/ilwisobjects -I../ilwiscore/include/ilwisobjects/geometry -I../ilwiscore/include/util -I../ilwiscore/include/ilwisobjects/geometry/geodeticdatum -I../ilwiscore/include/ilwisobjects/geometry/projection -I../ilwiscore/include/ilwisobjects/geometry/coordinatesystem -I../ilwiscore/include/ilwisobjects/geometry/georeference -I../ilwiscore/include/ilwisobjects/coverage -I../ilwiscore/include/ilwisobjects/table -I../ilwiscore/include/ilwisobjects/operation/model -I../ilwiscore/include/ilwisobjects/operation -I../ilwiscore/include/ilwisobjects/operation/modeller -I../ilwiscore/include/ilwisobjects/workflow -I../ilwiscore/include/ilwisobjects/representation -I../ilwiscore/include/catalog -I../ilwiscore/include/ilwisobjects/domain -I../ilwiscore/include/geos/include -I /usr/include -I../../external -Iinclude -I./include/projections -I /usr/include/x86_64-linux-gnu/qt5 -I /usr/include/x86_64-linux-gnu/qt5/QtGui -I /usr/include/x86_64-linux-gnu/qt5/QtSql -I /usr/include/x86_64-linux-gnu/qt5/QtNetwork -I /usr/include/x86_64-linux-gnu/qt5/QtConcurrent -I /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
+INCPATH       = -I. -I../ilwiscore/include -I../ilwiscore/include/ilwisobjects -I../ilwiscore/include/ilwisobjects/geometry -I../ilwiscore/include/util -I../ilwiscore/include/ilwisobjects/geometry/geodeticdatum -I../ilwiscore/include/ilwisobjects/geometry/projection -I../ilwiscore/include/ilwisobjects/geometry/coordinatesystem -I../ilwiscore/include/ilwisobjects/geometry/georeference -I../ilwiscore/include/ilwisobjects/coverage -I../ilwiscore/include/ilwisobjects/table -I../ilwiscore/include/ilwisobjects/operation/model -I../ilwiscore/include/ilwisobjects/operation -I../ilwiscore/include/ilwisobjects/operation/modeller -I../ilwiscore/include/ilwisobjects/workflow -I../ilwiscore/include/ilwisobjects/representation -I../ilwiscore/include/catalog -I../ilwiscore/include/ilwisobjects/domain -I../ilwiscore/include/geos/include -I /usr/include -I. -Iinclude -I./include/projections -I /usr/include/x86_64-linux-gnu/qt5 -I /usr/include/x86_64-linux-gnu/qt5/QtGui -I /usr/include/x86_64-linux-gnu/qt5/QtSql -I /usr/include/x86_64-linux-gnu/qt5/QtNetwork -I /usr/include/x86_64-linux-gnu/qt5/QtConcurrent -I /usr/include/x86_64-linux-gnu/qt5/QtCore -I../generated/objectfiles/gccx64_streamconnector/debug -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 QMAKE         = /usr/lib/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -37,10 +37,10 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = streamconnector1.0.0
-DISTDIR = /home/mschouwen/Documents/projects/proversion/generated/gccx64_streamconnector/debug/streamconnector1.0.0
+DISTDIR = /home/mschouwen/Documents/projects/proversion/projects/generated/objectfiles/gccx64_streamconnector/debug/streamconnector1.0.0
 LINK          = g++
 LFLAGS        = -shared -Wl,-soname,libstreamconnector.so.1
-LIBS          = $(SUBLIBS) -L/home/mschouwen/Documents/projects/proversion/generated/gccx64_streamconnector/debug -L/usr/lib -lgsl -lgslcblas -L/home/mschouwen/Documents/projects/proversion/output/gccx64_debug/ -lilwiscore /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Sql.so /usr/lib/x86_64-linux-gnu/libQt5Network.so /usr/lib/x86_64-linux-gnu/libQt5Concurrent.so /usr/lib/x86_64-linux-gnu/libQt5Core.so /usr/lib/x86_64-linux-gnu/libGL.so -lpthread   
+LIBS          = $(SUBLIBS) -L/home/mschouwen/Documents/projects/proversion/projects/generated/objectfiles/gccx64_streamconnector/debug -L/usr/lib -lgsl -lgslcblas -L/home/mschouwen/Documents/projects/proversion/projects/generated/bin/gccx64_debug/ -lilwiscore /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Sql.so /usr/lib/x86_64-linux-gnu/libQt5Network.so /usr/lib/x86_64-linux-gnu/libQt5Concurrent.so /usr/lib/x86_64-linux-gnu/libQt5Core.so /usr/lib/x86_64-linux-gnu/libGL.so -lpthread   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -48,7 +48,7 @@ STRIP         = strip
 
 ####### Output directory
 
-OBJECTS_DIR   = ../../generated/gccx64_streamconnector/debug/
+OBJECTS_DIR   = ../generated/objectfiles/gccx64_streamconnector/debug/
 
 ####### Files
 
@@ -76,35 +76,35 @@ SOURCES       = source/catalogconnection.cpp \
 		source/tableserializerv1.cpp \
 		source/versioneddatastreamfactory.cpp \
 		source/versionedserializer.cpp \
-		source/workflowserializerv1.cpp moc_downloadmanager.cpp \
-		moc_streammodule.cpp
-OBJECTS       = ../../generated/gccx64_streamconnector/debug/catalogconnection.o \
-		../../generated/gccx64_streamconnector/debug/catalogserializerv1.o \
-		../../generated/gccx64_streamconnector/debug/combinationmatrixserializerv1.o \
-		../../generated/gccx64_streamconnector/debug/coordinatesystemserializerv1.o \
-		../../generated/gccx64_streamconnector/debug/coverageserializerv1.o \
-		../../generated/gccx64_streamconnector/debug/domainserializerv1.o \
-		../../generated/gccx64_streamconnector/debug/downloadmanager.o \
-		../../generated/gccx64_streamconnector/debug/ellipsoidserializerv1.o \
-		../../generated/gccx64_streamconnector/debug/featureserializerv1.o \
-		../../generated/gccx64_streamconnector/debug/georefserializerv1.o \
-		../../generated/gccx64_streamconnector/debug/modelserializerv1.o \
-		../../generated/gccx64_streamconnector/debug/operationmetadataserializerv1.o \
-		../../generated/gccx64_streamconnector/debug/projectionserializerv1.o \
-		../../generated/gccx64_streamconnector/debug/rasterserializerv1.o \
-		../../generated/gccx64_streamconnector/debug/rawconverter.o \
-		../../generated/gccx64_streamconnector/debug/representationserializer.o \
-		../../generated/gccx64_streamconnector/debug/scriptserializerv1.o \
-		../../generated/gccx64_streamconnector/debug/streamcatalogexplorer.o \
-		../../generated/gccx64_streamconnector/debug/streamconnector.o \
-		../../generated/gccx64_streamconnector/debug/streammodule.o \
-		../../generated/gccx64_streamconnector/debug/streamobjectfactory.o \
-		../../generated/gccx64_streamconnector/debug/tableserializerv1.o \
-		../../generated/gccx64_streamconnector/debug/versioneddatastreamfactory.o \
-		../../generated/gccx64_streamconnector/debug/versionedserializer.o \
-		../../generated/gccx64_streamconnector/debug/workflowserializerv1.o \
-		../../generated/gccx64_streamconnector/debug/moc_downloadmanager.o \
-		../../generated/gccx64_streamconnector/debug/moc_streammodule.o
+		source/workflowserializerv1.cpp ../generated/objectfiles/gccx64_streamconnector/debug/moc_downloadmanager.cpp \
+		../generated/objectfiles/gccx64_streamconnector/debug/moc_streammodule.cpp
+OBJECTS       = ../generated/objectfiles/gccx64_streamconnector/debug/catalogconnection.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/catalogserializerv1.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/combinationmatrixserializerv1.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/coordinatesystemserializerv1.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/coverageserializerv1.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/domainserializerv1.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/downloadmanager.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/ellipsoidserializerv1.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/featureserializerv1.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/georefserializerv1.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/modelserializerv1.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/operationmetadataserializerv1.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/projectionserializerv1.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/rasterserializerv1.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/rawconverter.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/representationserializer.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/scriptserializerv1.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/streamcatalogexplorer.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/streamconnector.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/streammodule.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/streamobjectfactory.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/tableserializerv1.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/versioneddatastreamfactory.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/versionedserializer.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/workflowserializerv1.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/moc_downloadmanager.o \
+		../generated/objectfiles/gccx64_streamconnector/debug/moc_streammodule.o
 DIST          = streamconnector.json \
 		resources/streamformats.config \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -233,9 +233,9 @@ DIST          = streamconnector.json \
 		source/versionedserializer.cpp \
 		source/workflowserializerv1.cpp
 QMAKE_TARGET  = streamconnector
-DESTDIR       = ../../output/gccx64_debug/extensions/streamconnector/
+DESTDIR       = ../generated/bin/gccx64_debug/extensions/streamconnector/
 TARGET        = libstreamconnector.so.1.0.0
-TARGETA       = ../../output/gccx64_debug/extensions/streamconnector/libstreamconnector.a
+TARGETA       = ../generated/bin/gccx64_debug/extensions/streamconnector/libstreamconnector.a
 TARGET0       = libstreamconnector.so
 TARGETD       = libstreamconnector.so.1.0.0
 TARGET1       = libstreamconnector.so.1
@@ -245,32 +245,32 @@ TARGET2       = libstreamconnector.so.1.0
 first: all
 ####### Build rules
 
-../../output/gccx64_debug/extensions/streamconnector/libstreamconnector.so.1.0.0:  $(OBJECTS) $(SUBLIBS) $(OBJCOMP)  
-	@test -d ../../output/gccx64_debug/extensions/streamconnector/ || mkdir -p ../../output/gccx64_debug/extensions/streamconnector/
-	mkdir -p /home/mschouwen/.local/share/ilwis/extensions/streamconnector 
-	 cp -f -R /home/mschouwen/Documents/projects/proversion/projects/streamconnector/resources /home/mschouwen/.local/share/ilwis/extensions/streamconnector 
+../generated/bin/gccx64_debug/extensions/streamconnector/libstreamconnector.so.1.0.0:  $(OBJECTS) $(SUBLIBS) $(OBJCOMP)  
+	@test -d ../generated/bin/gccx64_debug/extensions/streamconnector/ || mkdir -p ../generated/bin/gccx64_debug/extensions/streamconnector/
+	mkdir -p /home/mschouwen/Documents/projects/proversion/projects/generated/bin/gccx64_debug/extensions/streamconnector 
+	 cp -f -R /home/mschouwen/Documents/projects/proversion/projects/streamconnector/resources /home/mschouwen/Documents/projects/proversion/projects/generated/bin/gccx64_debug/extensions/streamconnector 
 	
 	-$(DEL_FILE) $(TARGET) $(TARGET0) $(TARGET1) $(TARGET2)
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(LIBS) $(OBJCOMP)
 	-ln -s $(TARGET) $(TARGET0)
 	-ln -s $(TARGET) $(TARGET1)
 	-ln -s $(TARGET) $(TARGET2)
-	-$(DEL_FILE) ../../output/gccx64_debug/extensions/streamconnector/$(TARGET)
-	-$(MOVE) $(TARGET) ../../output/gccx64_debug/extensions/streamconnector/$(TARGET)
-	-$(DEL_FILE) ../../output/gccx64_debug/extensions/streamconnector/$(TARGET0)
-	-$(DEL_FILE) ../../output/gccx64_debug/extensions/streamconnector/$(TARGET1)
-	-$(DEL_FILE) ../../output/gccx64_debug/extensions/streamconnector/$(TARGET2)
-	-$(MOVE) $(TARGET0) ../../output/gccx64_debug/extensions/streamconnector/$(TARGET0)
-	-$(MOVE) $(TARGET1) ../../output/gccx64_debug/extensions/streamconnector/$(TARGET1)
-	-$(MOVE) $(TARGET2) ../../output/gccx64_debug/extensions/streamconnector/$(TARGET2)
+	-$(DEL_FILE) ../generated/bin/gccx64_debug/extensions/streamconnector/$(TARGET)
+	-$(MOVE) $(TARGET) ../generated/bin/gccx64_debug/extensions/streamconnector/$(TARGET)
+	-$(DEL_FILE) ../generated/bin/gccx64_debug/extensions/streamconnector/$(TARGET0)
+	-$(DEL_FILE) ../generated/bin/gccx64_debug/extensions/streamconnector/$(TARGET1)
+	-$(DEL_FILE) ../generated/bin/gccx64_debug/extensions/streamconnector/$(TARGET2)
+	-$(MOVE) $(TARGET0) ../generated/bin/gccx64_debug/extensions/streamconnector/$(TARGET0)
+	-$(MOVE) $(TARGET1) ../generated/bin/gccx64_debug/extensions/streamconnector/$(TARGET1)
+	-$(MOVE) $(TARGET2) ../generated/bin/gccx64_debug/extensions/streamconnector/$(TARGET2)
 
 
 
-staticlib: ../../output/gccx64_debug/extensions/streamconnector/libstreamconnector.a
+staticlib: ../generated/bin/gccx64_debug/extensions/streamconnector/libstreamconnector.a
 
-../../output/gccx64_debug/extensions/streamconnector/libstreamconnector.a:  $(OBJECTS) $(OBJCOMP) 
-	mkdir -p /home/mschouwen/.local/share/ilwis/extensions/streamconnector 
-	 cp -f -R /home/mschouwen/Documents/projects/proversion/projects/streamconnector/resources /home/mschouwen/.local/share/ilwis/extensions/streamconnector 
+../generated/bin/gccx64_debug/extensions/streamconnector/libstreamconnector.a:  $(OBJECTS) $(OBJCOMP) 
+	mkdir -p /home/mschouwen/Documents/projects/proversion/projects/generated/bin/gccx64_debug/extensions/streamconnector 
+	 cp -f -R /home/mschouwen/Documents/projects/proversion/projects/streamconnector/resources /home/mschouwen/Documents/projects/proversion/projects/generated/bin/gccx64_debug/extensions/streamconnector 
 	
 	-$(DEL_FILE) $(TARGETA) 
 	$(AR) $(TARGETA) $(OBJECTS)
@@ -436,7 +436,7 @@ qmake: FORCE
 qmake_all: FORCE
 
 
-all: Makefile ../../output/gccx64_debug/extensions/streamconnector/libstreamconnector.so.1.0.0
+all: Makefile ../generated/bin/gccx64_debug/extensions/streamconnector/libstreamconnector.so.1.0.0
 
 dist: distdir FORCE
 	(cd `dirname $(DISTDIR)` && $(TAR) $(DISTNAME).tar $(DISTNAME) && $(COMPRESS) $(DISTNAME).tar) && $(MOVE) `dirname $(DISTDIR)`/$(DISTNAME).tar.gz . && $(DEL_FILE) -r $(DISTDIR)
@@ -455,8 +455,8 @@ clean: compiler_clean
 
 
 distclean: clean 
-	-$(DEL_FILE) ../../output/gccx64_debug/extensions/streamconnector/$(TARGET) 
-	-$(DEL_FILE) ../../output/gccx64_debug/extensions/streamconnector/$(TARGET0) ../../output/gccx64_debug/extensions/streamconnector/$(TARGET1) ../../output/gccx64_debug/extensions/streamconnector/$(TARGET2) $(TARGETA)
+	-$(DEL_FILE) ../generated/bin/gccx64_debug/extensions/streamconnector/$(TARGET) 
+	-$(DEL_FILE) ../generated/bin/gccx64_debug/extensions/streamconnector/$(TARGET0) ../generated/bin/gccx64_debug/extensions/streamconnector/$(TARGET1) ../generated/bin/gccx64_debug/extensions/streamconnector/$(TARGET2) $(TARGETA)
 	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
@@ -473,16 +473,16 @@ benchmark: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_predefs_make_all: moc_predefs.h
+compiler_moc_predefs_make_all: ../generated/objectfiles/gccx64_streamconnector/debug/moc_predefs.h
 compiler_moc_predefs_clean:
-	-$(DEL_FILE) moc_predefs.h
-moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
-	g++ -pipe -Wno-unused-parameter -Wno-sign-compare -Wno-unused-local-typedefs -Wno-deprecated-declarations -g -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
+	-$(DEL_FILE) ../generated/objectfiles/gccx64_streamconnector/debug/moc_predefs.h
+../generated/objectfiles/gccx64_streamconnector/debug/moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
+	g++ -pipe -Wno-unused-parameter -Wno-sign-compare -Wno-unused-local-typedefs -Wno-deprecated-declarations -g -Wall -W -dM -E -o ../generated/objectfiles/gccx64_streamconnector/debug/moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_downloadmanager.cpp moc_streammodule.cpp
+compiler_moc_header_make_all: ../generated/objectfiles/gccx64_streamconnector/debug/moc_downloadmanager.cpp ../generated/objectfiles/gccx64_streamconnector/debug/moc_streammodule.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_downloadmanager.cpp moc_streammodule.cpp
-moc_downloadmanager.cpp: include/downloadmanager.h \
+	-$(DEL_FILE) ../generated/objectfiles/gccx64_streamconnector/debug/moc_downloadmanager.cpp ../generated/objectfiles/gccx64_streamconnector/debug/moc_streammodule.cpp
+../generated/objectfiles/gccx64_streamconnector/debug/moc_downloadmanager.cpp: include/downloadmanager.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
 		../ilwiscore/include/ilwistypes.h \
@@ -548,11 +548,11 @@ moc_downloadmanager.cpp: include/downloadmanager.h \
 		../ilwiscore/include/ilwisobjects/geometry/georeference/ctpgeoreference.h \
 		../ilwiscore/include/util/mathhelper.h \
 		include/versionedserializer.h \
-		moc_predefs.h \
+		../generated/objectfiles/gccx64_streamconnector/debug/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/mschouwen/Documents/projects/proversion/projects/streamconnector/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mschouwen/Documents/projects/proversion/projects/streamconnector -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/util -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry/geodeticdatum -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry/projection -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry/coordinatesystem -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry/georeference -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/coverage -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/table -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/operation/model -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/operation -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/operation/modeller -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/workflow -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/representation -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/catalog -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/domain -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/geos/include -I/usr/include -I/home/mschouwen/Documents/projects/proversion/external -I/home/mschouwen/Documents/projects/proversion/projects/streamconnector/include -I/home/mschouwen/Documents/projects/proversion/projects/streamconnector/include/projections -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtConcurrent -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include include/downloadmanager.h -o moc_downloadmanager.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/mschouwen/Documents/projects/proversion/projects/generated/objectfiles/gccx64_streamconnector/debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mschouwen/Documents/projects/proversion/projects/streamconnector -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/util -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry/geodeticdatum -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry/projection -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry/coordinatesystem -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry/georeference -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/coverage -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/table -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/operation/model -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/operation -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/operation/modeller -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/workflow -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/representation -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/catalog -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/domain -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/geos/include -I/usr/include -I/home/mschouwen/Documents/projects/proversion/projects/streamconnector -I/home/mschouwen/Documents/projects/proversion/projects/streamconnector/include -I/home/mschouwen/Documents/projects/proversion/projects/streamconnector/include/projections -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtConcurrent -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include include/downloadmanager.h -o ../generated/objectfiles/gccx64_streamconnector/debug/moc_downloadmanager.cpp
 
-moc_streammodule.cpp: include/streammodule.h \
+../generated/objectfiles/gccx64_streamconnector/debug/moc_streammodule.cpp: include/streammodule.h \
 		../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
@@ -573,9 +573,9 @@ moc_streammodule.cpp: include/streammodule.h \
 		../ilwiscore/include/ilwisobjects/domain/rangeiterator.h \
 		../ilwiscore/include/util/juliantime.h \
 		../ilwiscore/include/factory.h \
-		moc_predefs.h \
+		../generated/objectfiles/gccx64_streamconnector/debug/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/mschouwen/Documents/projects/proversion/projects/streamconnector/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mschouwen/Documents/projects/proversion/projects/streamconnector -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/util -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry/geodeticdatum -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry/projection -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry/coordinatesystem -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry/georeference -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/coverage -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/table -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/operation/model -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/operation -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/operation/modeller -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/workflow -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/representation -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/catalog -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/domain -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/geos/include -I/usr/include -I/home/mschouwen/Documents/projects/proversion/external -I/home/mschouwen/Documents/projects/proversion/projects/streamconnector/include -I/home/mschouwen/Documents/projects/proversion/projects/streamconnector/include/projections -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtConcurrent -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include include/streammodule.h -o moc_streammodule.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/mschouwen/Documents/projects/proversion/projects/generated/objectfiles/gccx64_streamconnector/debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mschouwen/Documents/projects/proversion/projects/streamconnector -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/util -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry/geodeticdatum -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry/projection -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry/coordinatesystem -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/geometry/georeference -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/coverage -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/table -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/operation/model -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/operation -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/operation/modeller -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/workflow -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/representation -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/catalog -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/ilwisobjects/domain -I/home/mschouwen/Documents/projects/proversion/projects/ilwiscore/include/geos/include -I/usr/include -I/home/mschouwen/Documents/projects/proversion/projects/streamconnector -I/home/mschouwen/Documents/projects/proversion/projects/streamconnector/include -I/home/mschouwen/Documents/projects/proversion/projects/streamconnector/include/projections -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtConcurrent -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include include/streammodule.h -o ../generated/objectfiles/gccx64_streamconnector/debug/moc_streammodule.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -591,7 +591,7 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 
 ####### Compile
 
-../../generated/gccx64_streamconnector/debug/catalogconnection.o: source/catalogconnection.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/catalogconnection.o: source/catalogconnection.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -622,9 +622,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../ilwiscore/include/util/tranquilizer.h \
 		../ilwiscore/include/catalog/catalog.h \
 		include/catalogconnection.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/catalogconnection.o source/catalogconnection.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/catalogconnection.o source/catalogconnection.cpp
 
-../../generated/gccx64_streamconnector/debug/catalogserializerv1.o: source/catalogserializerv1.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/catalogserializerv1.o: source/catalogserializerv1.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -653,9 +653,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../ilwiscore/include/catalog/catalog.h \
 		../ilwiscore/include/oshelper.h \
 		include/catalogserializerv1.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/catalogserializerv1.o source/catalogserializerv1.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/catalogserializerv1.o source/catalogserializerv1.cpp
 
-../../generated/gccx64_streamconnector/debug/combinationmatrixserializerv1.o: source/combinationmatrixserializerv1.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/combinationmatrixserializerv1.o: source/combinationmatrixserializerv1.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -691,9 +691,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		include/versioneddatastreamfactory.h \
 		../ilwiscore/include/ilwisobjects/table/combinationmatrix.h \
 		include/combinationmatrixserializerv1.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/combinationmatrixserializerv1.o source/combinationmatrixserializerv1.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/combinationmatrixserializerv1.o source/combinationmatrixserializerv1.cpp
 
-../../generated/gccx64_streamconnector/debug/coordinatesystemserializerv1.o: source/coordinatesystemserializerv1.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/coordinatesystemserializerv1.o: source/coordinatesystemserializerv1.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -760,9 +760,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		include/versionedserializer.h \
 		include/versioneddatastreamfactory.h \
 		include/coordinatesystemserializerv1.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/coordinatesystemserializerv1.o source/coordinatesystemserializerv1.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/coordinatesystemserializerv1.o source/coordinatesystemserializerv1.cpp
 
-../../generated/gccx64_streamconnector/debug/coverageserializerv1.o: source/coverageserializerv1.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/coverageserializerv1.o: source/coverageserializerv1.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -836,9 +836,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		include/coverageserializerv1.h \
 		../ilwiscore/include/abstractfactory.h \
 		include/versioneddatastreamfactory.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/coverageserializerv1.o source/coverageserializerv1.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/coverageserializerv1.o source/coverageserializerv1.cpp
 
-../../generated/gccx64_streamconnector/debug/domainserializerv1.o: source/domainserializerv1.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/domainserializerv1.o: source/domainserializerv1.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -870,9 +870,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../ilwiscore/include/ilwisobjects/domain/domain.h \
 		../ilwiscore/include/ilwisobjects/domain/domainitem.h \
 		include/domainserializerv1.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/domainserializerv1.o source/domainserializerv1.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/domainserializerv1.o source/domainserializerv1.cpp
 
-../../generated/gccx64_streamconnector/debug/downloadmanager.o: source/downloadmanager.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/downloadmanager.o: source/downloadmanager.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -957,9 +957,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../ilwiscore/include/ilwisobjects/geometry/georeference/controlpoint.h \
 		../ilwiscore/include/ilwisobjects/geometry/georeference/ctpgeoreference.h \
 		include/downloadmanager.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/downloadmanager.o source/downloadmanager.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/downloadmanager.o source/downloadmanager.cpp
 
-../../generated/gccx64_streamconnector/debug/ellipsoidserializerv1.o: source/ellipsoidserializerv1.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/ellipsoidserializerv1.o: source/ellipsoidserializerv1.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -1016,9 +1016,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../ilwiscore/include/connectorinterface.h \
 		include/versionedserializer.h \
 		include/ellipsoidserializerv1.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/ellipsoidserializerv1.o source/ellipsoidserializerv1.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/ellipsoidserializerv1.o source/ellipsoidserializerv1.cpp
 
-../../generated/gccx64_streamconnector/debug/featureserializerv1.o: source/featureserializerv1.cpp ../ilwiscore/include/ilwisobjects/coverage/coverage.h \
+../generated/objectfiles/gccx64_streamconnector/debug/featureserializerv1.o: source/featureserializerv1.cpp ../ilwiscore/include/ilwisobjects/coverage/coverage.h \
 		../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
@@ -1094,9 +1094,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../ilwiscore/include/abstractfactory.h \
 		include/versioneddatastreamfactory.h \
 		include/featureserializerv1.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/featureserializerv1.o source/featureserializerv1.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/featureserializerv1.o source/featureserializerv1.cpp
 
-../../generated/gccx64_streamconnector/debug/georefserializerv1.o: source/georefserializerv1.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/georefserializerv1.o: source/georefserializerv1.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -1157,157 +1157,6 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../ilwiscore/include/ilwisobjects/geometry/georeference/cornersgeoreference.h \
 		../ilwiscore/include/ilwisobjects/geometry/georeference/controlpoint.h \
 		../ilwiscore/include/ilwisobjects/geometry/georeference/ctpgeoreference.h \
-		../../external/eigen3/Eigen/LU \
-		../../external/eigen3/Eigen/Core \
-		../../external/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
-		../../external/eigen3/Eigen/src/Core/util/Macros.h \
-		../../external/eigen3/Eigen/src/Core/util/MKL_support.h \
-		../../external/eigen3/Eigen/src/misc/blas.h \
-		../../external/eigen3/Eigen/src/Core/util/Constants.h \
-		../../external/eigen3/Eigen/src/Core/util/Meta.h \
-		../../external/eigen3/Eigen/src/Core/util/ForwardDeclarations.h \
-		../../external/eigen3/Eigen/src/Core/util/StaticAssert.h \
-		../../external/eigen3/Eigen/src/Core/util/XprHelper.h \
-		../../external/eigen3/Eigen/src/Core/util/Memory.h \
-		../../external/eigen3/Eigen/src/Core/NumTraits.h \
-		../../external/eigen3/Eigen/src/Core/MathFunctions.h \
-		../../external/eigen3/Eigen/src/Core/GenericPacketMath.h \
-		../../external/eigen3/Eigen/src/Core/MathFunctionsImpl.h \
-		../../external/eigen3/Eigen/src/Core/arch/Default/ConjHelper.h \
-		../../external/eigen3/Eigen/src/Core/arch/SSE/PacketMath.h \
-		../../external/eigen3/Eigen/src/Core/arch/AVX/PacketMath.h \
-		../../external/eigen3/Eigen/src/Core/arch/AVX512/PacketMath.h \
-		../../external/eigen3/Eigen/src/Core/arch/AVX512/MathFunctions.h \
-		../../external/eigen3/Eigen/src/Core/arch/SSE/Complex.h \
-		../../external/eigen3/Eigen/src/Core/arch/SSE/MathFunctions.h \
-		../../external/eigen3/Eigen/src/Core/arch/AVX/MathFunctions.h \
-		../../external/eigen3/Eigen/src/Core/arch/AVX/Complex.h \
-		../../external/eigen3/Eigen/src/Core/arch/AVX/TypeCasting.h \
-		../../external/eigen3/Eigen/src/Core/arch/SSE/TypeCasting.h \
-		../../external/eigen3/Eigen/src/Core/arch/AltiVec/PacketMath.h \
-		../../external/eigen3/Eigen/src/Core/arch/AltiVec/MathFunctions.h \
-		../../external/eigen3/Eigen/src/Core/arch/AltiVec/Complex.h \
-		../../external/eigen3/Eigen/src/Core/arch/NEON/PacketMath.h \
-		../../external/eigen3/Eigen/src/Core/arch/NEON/MathFunctions.h \
-		../../external/eigen3/Eigen/src/Core/arch/NEON/Complex.h \
-		../../external/eigen3/Eigen/src/Core/arch/ZVector/PacketMath.h \
-		../../external/eigen3/Eigen/src/Core/arch/ZVector/MathFunctions.h \
-		../../external/eigen3/Eigen/src/Core/arch/ZVector/Complex.h \
-		../../external/eigen3/Eigen/src/Core/arch/CUDA/Half.h \
-		../../external/eigen3/Eigen/src/Core/arch/CUDA/PacketMathHalf.h \
-		../../external/eigen3/Eigen/src/Core/arch/CUDA/TypeCasting.h \
-		../../external/eigen3/Eigen/src/Core/arch/CUDA/PacketMath.h \
-		../../external/eigen3/Eigen/src/Core/arch/CUDA/MathFunctions.h \
-		../../external/eigen3/Eigen/src/Core/arch/Default/Settings.h \
-		../../external/eigen3/Eigen/src/Core/functors/TernaryFunctors.h \
-		../../external/eigen3/Eigen/src/Core/functors/BinaryFunctors.h \
-		../../external/eigen3/Eigen/src/Core/functors/UnaryFunctors.h \
-		../../external/eigen3/Eigen/src/Core/functors/NullaryFunctors.h \
-		../../external/eigen3/Eigen/src/Core/functors/StlFunctors.h \
-		../../external/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h \
-		../../external/eigen3/Eigen/src/Core/arch/CUDA/Complex.h \
-		../../external/eigen3/Eigen/src/Core/IO.h \
-		../../external/eigen3/Eigen/src/Core/DenseCoeffsBase.h \
-		../../external/eigen3/Eigen/src/Core/DenseBase.h \
-		../../external/eigen3/Eigen/src/plugins/BlockMethods.h \
-		../../external/eigen3/Eigen/src/Core/MatrixBase.h \
-		../../external/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
-		../../external/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
-		../../external/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
-		../../external/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
-		../../external/eigen3/Eigen/src/Core/EigenBase.h \
-		../../external/eigen3/Eigen/src/Core/Product.h \
-		../../external/eigen3/Eigen/src/Core/CoreEvaluators.h \
-		../../external/eigen3/Eigen/src/Core/AssignEvaluator.h \
-		../../external/eigen3/Eigen/src/Core/Assign.h \
-		../../external/eigen3/Eigen/src/Core/ArrayBase.h \
-		../../external/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h \
-		../../external/eigen3/Eigen/src/plugins/ArrayCwiseBinaryOps.h \
-		../../external/eigen3/Eigen/src/Core/util/BlasUtil.h \
-		../../external/eigen3/Eigen/src/Core/DenseStorage.h \
-		../../external/eigen3/Eigen/src/Core/NestByValue.h \
-		../../external/eigen3/Eigen/src/Core/ReturnByValue.h \
-		../../external/eigen3/Eigen/src/Core/NoAlias.h \
-		../../external/eigen3/Eigen/src/Core/PlainObjectBase.h \
-		../../external/eigen3/Eigen/src/Core/Matrix.h \
-		../../external/eigen3/Eigen/src/Core/Array.h \
-		../../external/eigen3/Eigen/src/Core/CwiseTernaryOp.h \
-		../../external/eigen3/Eigen/src/Core/CwiseBinaryOp.h \
-		../../external/eigen3/Eigen/src/Core/CwiseUnaryOp.h \
-		../../external/eigen3/Eigen/src/Core/CwiseNullaryOp.h \
-		../../external/eigen3/Eigen/src/Core/CwiseUnaryView.h \
-		../../external/eigen3/Eigen/src/Core/SelfCwiseBinaryOp.h \
-		../../external/eigen3/Eigen/src/Core/Dot.h \
-		../../external/eigen3/Eigen/src/Core/StableNorm.h \
-		../../external/eigen3/Eigen/src/Core/Stride.h \
-		../../external/eigen3/Eigen/src/Core/MapBase.h \
-		../../external/eigen3/Eigen/src/Core/Map.h \
-		../../external/eigen3/Eigen/src/Core/Ref.h \
-		../../external/eigen3/Eigen/src/Core/Block.h \
-		../../external/eigen3/Eigen/src/Core/VectorBlock.h \
-		../../external/eigen3/Eigen/src/Core/Transpose.h \
-		../../external/eigen3/Eigen/src/Core/DiagonalMatrix.h \
-		../../external/eigen3/Eigen/src/Core/Diagonal.h \
-		../../external/eigen3/Eigen/src/Core/DiagonalProduct.h \
-		../../external/eigen3/Eigen/src/Core/Redux.h \
-		../../external/eigen3/Eigen/src/Core/Visitor.h \
-		../../external/eigen3/Eigen/src/Core/Fuzzy.h \
-		../../external/eigen3/Eigen/src/Core/Swap.h \
-		../../external/eigen3/Eigen/src/Core/CommaInitializer.h \
-		../../external/eigen3/Eigen/src/Core/GeneralProduct.h \
-		../../external/eigen3/Eigen/src/Core/Solve.h \
-		../../external/eigen3/Eigen/src/Core/Inverse.h \
-		../../external/eigen3/Eigen/src/Core/SolverBase.h \
-		../../external/eigen3/Eigen/src/Core/PermutationMatrix.h \
-		../../external/eigen3/Eigen/src/Core/Transpositions.h \
-		../../external/eigen3/Eigen/src/Core/TriangularMatrix.h \
-		../../external/eigen3/Eigen/src/Core/SelfAdjointView.h \
-		../../external/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h \
-		../../external/eigen3/Eigen/src/Core/products/Parallelizer.h \
-		../../external/eigen3/Eigen/src/Core/ProductEvaluators.h \
-		../../external/eigen3/Eigen/src/Core/products/GeneralMatrixVector.h \
-		../../external/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix.h \
-		../../external/eigen3/Eigen/src/Core/SolveTriangular.h \
-		../../external/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h \
-		../../external/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h \
-		../../external/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h \
-		../../external/eigen3/Eigen/src/Core/products/SelfadjointProduct.h \
-		../../external/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h \
-		../../external/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h \
-		../../external/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h \
-		../../external/eigen3/Eigen/src/Core/products/TriangularSolverMatrix.h \
-		../../external/eigen3/Eigen/src/Core/products/TriangularSolverVector.h \
-		../../external/eigen3/Eigen/src/Core/BandMatrix.h \
-		../../external/eigen3/Eigen/src/Core/CoreIterators.h \
-		../../external/eigen3/Eigen/src/Core/ConditionEstimator.h \
-		../../external/eigen3/Eigen/src/Core/BooleanRedux.h \
-		../../external/eigen3/Eigen/src/Core/Select.h \
-		../../external/eigen3/Eigen/src/Core/VectorwiseOp.h \
-		../../external/eigen3/Eigen/src/Core/Random.h \
-		../../external/eigen3/Eigen/src/Core/Replicate.h \
-		../../external/eigen3/Eigen/src/Core/Reverse.h \
-		../../external/eigen3/Eigen/src/Core/ArrayWrapper.h \
-		../../external/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix_BLAS.h \
-		../../external/eigen3/Eigen/src/Core/products/GeneralMatrixVector_BLAS.h \
-		../../external/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular_BLAS.h \
-		../../external/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix_BLAS.h \
-		../../external/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector_BLAS.h \
-		../../external/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix_BLAS.h \
-		../../external/eigen3/Eigen/src/Core/products/TriangularMatrixVector_BLAS.h \
-		../../external/eigen3/Eigen/src/Core/products/TriangularSolverMatrix_BLAS.h \
-		../../external/eigen3/Eigen/src/Core/Assign_MKL.h \
-		../../external/eigen3/Eigen/src/Core/GlobalFunctions.h \
-		../../external/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h \
-		../../external/eigen3/Eigen/src/misc/Kernel.h \
-		../../external/eigen3/Eigen/src/misc/Image.h \
-		../../external/eigen3/Eigen/src/LU/FullPivLU.h \
-		../../external/eigen3/Eigen/src/LU/PartialPivLU.h \
-		../../external/eigen3/Eigen/src/misc/lapacke.h \
-		../../external/eigen3/Eigen/src/misc/lapacke_mangling.h \
-		../../external/eigen3/Eigen/src/LU/PartialPivLU_LAPACKE.h \
-		../../external/eigen3/Eigen/src/LU/Determinant.h \
-		../../external/eigen3/Eigen/src/LU/InverseImpl.h \
-		../../external/eigen3/Eigen/src/LU/arch/Inverse_SSE.h \
 		../ilwiscore/include/util/mathhelper.h \
 		../ilwiscore/include/ilwisobjects/geometry/georeference/planarctpgeoreference.h \
 		../ilwiscore/include/ilwisobjects/geometry/georeference/undeterminedgeoreference.h \
@@ -1317,9 +1166,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		include/versioneddatastreamfactory.h \
 		include/coverageserializerv1.h \
 		include/georefserializerv1.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/georefserializerv1.o source/georefserializerv1.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/georefserializerv1.o source/georefserializerv1.cpp
 
-../../generated/gccx64_streamconnector/debug/modelserializerv1.o: source/modelserializerv1.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/modelserializerv1.o: source/modelserializerv1.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -1387,9 +1236,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		include/versioneddatastreamfactory.h \
 		../ilwiscore/include/ilwisobjects/operation/modeller/modellerfactory.h \
 		include/modelserializerv1.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/modelserializerv1.o source/modelserializerv1.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/modelserializerv1.o source/modelserializerv1.cpp
 
-../../generated/gccx64_streamconnector/debug/operationmetadataserializerv1.o: source/operationmetadataserializerv1.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/operationmetadataserializerv1.o: source/operationmetadataserializerv1.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -1417,9 +1266,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		include/versionedserializer.h \
 		include/operationmetadataserializerv1.h \
 		../ilwiscore/include/ilwisobjects/operation/operationmetadata.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/operationmetadataserializerv1.o source/operationmetadataserializerv1.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/operationmetadataserializerv1.o source/operationmetadataserializerv1.cpp
 
-../../generated/gccx64_streamconnector/debug/projectionserializerv1.o: source/projectionserializerv1.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/projectionserializerv1.o: source/projectionserializerv1.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -1479,9 +1328,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../ilwiscore/include/connectorinterface.h \
 		include/versionedserializer.h \
 		include/projectionserializerv1.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/projectionserializerv1.o source/projectionserializerv1.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/projectionserializerv1.o source/projectionserializerv1.cpp
 
-../../generated/gccx64_streamconnector/debug/rasterserializerv1.o: source/rasterserializerv1.cpp ../ilwiscore/include/ilwisobjects/coverage/raster.h \
+../generated/objectfiles/gccx64_streamconnector/debug/rasterserializerv1.o: source/rasterserializerv1.cpp ../ilwiscore/include/ilwisobjects/coverage/raster.h \
 		../ilwiscore/include/ilwisobjects/coverage/coverage.h \
 		../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
@@ -1571,9 +1420,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../ilwiscore/include/ilwisobjects/geometry/georeference/controlpoint.h \
 		../ilwiscore/include/ilwisobjects/geometry/georeference/ctpgeoreference.h \
 		include/rasterserializerv1.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/rasterserializerv1.o source/rasterserializerv1.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/rasterserializerv1.o source/rasterserializerv1.cpp
 
-../../generated/gccx64_streamconnector/debug/rawconverter.o: source/rawconverter.cpp ../ilwiscore/include/ilwis.h \
+../generated/objectfiles/gccx64_streamconnector/debug/rawconverter.o: source/rawconverter.cpp ../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
 		../ilwiscore/include/ilwistypes.h \
 		../ilwiscore/include/kernel_global.h \
@@ -1636,9 +1485,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../ilwiscore/include/ilwisobjects/geometry/georeference/controlpoint.h \
 		../ilwiscore/include/ilwisobjects/geometry/georeference/ctpgeoreference.h \
 		../ilwiscore/include/util/mathhelper.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/rawconverter.o source/rawconverter.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/rawconverter.o source/rawconverter.cpp
 
-../../generated/gccx64_streamconnector/debug/representationserializer.o: source/representationserializer.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/representationserializer.o: source/representationserializer.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -1675,9 +1524,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../ilwiscore/include/abstractfactory.h \
 		include/versioneddatastreamfactory.h \
 		include/representationserializer.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/representationserializer.o source/representationserializer.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/representationserializer.o source/representationserializer.cpp
 
-../../generated/gccx64_streamconnector/debug/scriptserializerv1.o: source/scriptserializerv1.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/scriptserializerv1.o: source/scriptserializerv1.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -1735,9 +1584,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../ilwiscore/include/connectorinterface.h \
 		include/versionedserializer.h \
 		include/scriptserializerv1.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/scriptserializerv1.o source/scriptserializerv1.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/scriptserializerv1.o source/scriptserializerv1.cpp
 
-../../generated/gccx64_streamconnector/debug/streamcatalogexplorer.o: source/streamcatalogexplorer.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/streamcatalogexplorer.o: source/streamcatalogexplorer.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -1840,9 +1689,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		include/versionedserializer.h \
 		../ilwiscore/include/catalog/mastercatalogcache.h \
 		include/versioneddatastreamfactory.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/streamcatalogexplorer.o source/streamcatalogexplorer.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/streamcatalogexplorer.o source/streamcatalogexplorer.cpp
 
-../../generated/gccx64_streamconnector/debug/streamconnector.o: source/streamconnector.cpp ../ilwiscore/include/ilwisobjects/coverage/raster.h \
+../generated/objectfiles/gccx64_streamconnector/debug/streamconnector.o: source/streamconnector.cpp ../ilwiscore/include/ilwisobjects/coverage/raster.h \
 		../ilwiscore/include/ilwisobjects/coverage/coverage.h \
 		../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
@@ -1966,9 +1815,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		include/representationserializer.h \
 		../ilwiscore/include/ilwisobjects/operation/modeller/model.h \
 		include/versioneddatastreamfactory.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/streamconnector.o source/streamconnector.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/streamconnector.o source/streamconnector.cpp
 
-../../generated/gccx64_streamconnector/debug/streammodule.o: source/streammodule.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/streammodule.o: source/streammodule.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -2025,9 +1874,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		include/combinationmatrixserializerv1.h \
 		include/representationserializer.h \
 		../ilwiscore/include/catalog/dataformat.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/streammodule.o source/streammodule.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/streammodule.o source/streammodule.cpp
 
-../../generated/gccx64_streamconnector/debug/streamobjectfactory.o: source/streamobjectfactory.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/streamobjectfactory.o: source/streamobjectfactory.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -2062,9 +1911,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../ilwiscore/include/connectorfactory.h \
 		include/streamconnector.h \
 		include/streamobjectfactory.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/streamobjectfactory.o source/streamobjectfactory.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/streamobjectfactory.o source/streamobjectfactory.cpp
 
-../../generated/gccx64_streamconnector/debug/tableserializerv1.o: source/tableserializerv1.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/tableserializerv1.o: source/tableserializerv1.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -2104,9 +1953,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		include/streamconnector.h \
 		../ilwiscore/include/abstractfactory.h \
 		include/versioneddatastreamfactory.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/tableserializerv1.o source/tableserializerv1.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/tableserializerv1.o source/tableserializerv1.cpp
 
-../../generated/gccx64_streamconnector/debug/versioneddatastreamfactory.o: source/versioneddatastreamfactory.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/versioneddatastreamfactory.o: source/versioneddatastreamfactory.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -2134,9 +1983,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		include/streamconnector.h \
 		include/versionedserializer.h \
 		include/versioneddatastreamfactory.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/versioneddatastreamfactory.o source/versioneddatastreamfactory.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/versioneddatastreamfactory.o source/versioneddatastreamfactory.cpp
 
-../../generated/gccx64_streamconnector/debug/versionedserializer.o: source/versionedserializer.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/versionedserializer.o: source/versionedserializer.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -2176,9 +2025,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../ilwiscore/include/ilwisobjects/representation/shapelookup.h \
 		include/streamconnector.h \
 		../ilwiscore/include/ilwisobjects/operation/operationhelper.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/versionedserializer.o source/versionedserializer.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/versionedserializer.o source/versionedserializer.cpp
 
-../../generated/gccx64_streamconnector/debug/workflowserializerv1.o: source/workflowserializerv1.cpp ../ilwiscore/include/kernel.h \
+../generated/objectfiles/gccx64_streamconnector/debug/workflowserializerv1.o: source/workflowserializerv1.cpp ../ilwiscore/include/kernel.h \
 		../ilwiscore/include/kernel_global.h \
 		../ilwiscore/include/ilwis.h \
 		../ilwiscore/include/util/errmessages.h \
@@ -2249,13 +2098,13 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		include/streamconnector.h \
 		../ilwiscore/include/ilwisobjects/operation/modeller/workflow.h \
 		../ilwiscore/include/ilwisobjects/operation/operationExpression.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/workflowserializerv1.o source/workflowserializerv1.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/workflowserializerv1.o source/workflowserializerv1.cpp
 
-../../generated/gccx64_streamconnector/debug/moc_downloadmanager.o: moc_downloadmanager.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/moc_downloadmanager.o moc_downloadmanager.cpp
+../generated/objectfiles/gccx64_streamconnector/debug/moc_downloadmanager.o: ../generated/objectfiles/gccx64_streamconnector/debug/moc_downloadmanager.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/moc_downloadmanager.o ../generated/objectfiles/gccx64_streamconnector/debug/moc_downloadmanager.cpp
 
-../../generated/gccx64_streamconnector/debug/moc_streammodule.o: moc_streammodule.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../generated/gccx64_streamconnector/debug/moc_streammodule.o moc_streammodule.cpp
+../generated/objectfiles/gccx64_streamconnector/debug/moc_streammodule.o: ../generated/objectfiles/gccx64_streamconnector/debug/moc_streammodule.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../generated/objectfiles/gccx64_streamconnector/debug/moc_streammodule.o ../generated/objectfiles/gccx64_streamconnector/debug/moc_streammodule.cpp
 
 ####### Install
 
