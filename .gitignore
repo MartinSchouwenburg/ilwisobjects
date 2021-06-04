@@ -1,0 +1,8 @@
+generated/
+*.pro.user
+*.pro.user2
+*.pro.user.*
+Makefile
+moc_*.cpp
+moc_*.h
+*.stash
