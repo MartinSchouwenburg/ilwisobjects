@@ -11,8 +11,9 @@ DEFINES += ILWIS4CONNECTOR_LIBRARY
 
 include(../global.pri)
 INCLUDEPATH += ./include \
-    ./include/projections
-    ./include/qtcsv
+    ./include/projections \
+    ./include/qtcsv \
+    ../../external
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
