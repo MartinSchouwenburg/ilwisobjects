@@ -84,14 +84,15 @@ INCLUDEPATH +=  ../ilwiscore/include\
                 $$BOOST \
                 $$EXTERNAL
 
-OUTPUTPATH=$$clean_path($$PWD/../output/$$PREFIX_COMPILER$$CONF)
-LIBPATH=$$clean_path($$PWD/../generated/$$PREFIX_COMPILER$$TARGET/$$CONF)
+OUTPUTPATH=$$clean_path($$PWD/generated/bin/$$PREFIX_COMPILER$$CONF)
+LIBPATH=$$clean_path($$PWD/generated/objectfiles/$$PREFIX_COMPILER$$TARGET/$$CONF)
 LIBPATH=$$replace(LIBPATH,/,$$DIR_SEPARATOR)
 SOURCEDIR=$$clean_path($$PWD/$$TARGET/source)
 INLIBPATH=$$LIBPATH/*.$$LIB_EXTENSION
 INLIBPATH = $$replace(INLIBPATH,/,$$DIR_SEPARATOR)
 OBJECTS_DIR = $$LIBPATH
 OUTLIBPATH=dummy $$TARGET
+MOC_DIR=$$LIBPATH
 
 equals(TARGET, ilwiscore){
     OUTLIBPATH= $$OUTPUTPATH
@@ -101,17 +102,8 @@ equals(TARGET, ilwiscore){
 
 exists($$PWD/$$TARGET/resources){
     SOURCE_RESOURCE = $$clean_path($$PWD/$$TARGET/resources)
-    OUTPUTPATHRESOURCE=$$OUTPUTPATH
-    linux {
-        OUTPUTPATHRESOURCE=/home/$$(USER)/.local/share/ilwis
-    }
-    equals(TARGET, ilwiscore){
-        TARGET_RESOURCE_DIR = $$OUTPUTPATHRESOURCE
-    }else {
-        TARGET_RESOURCE_DIR = $$OUTPUTPATHRESOURCE/extensions/$$TARGET
-    }
+    TARGET_RESOURCE_DIR=$$OUTLIBPATH
     SOURCE_RESOURCE = $$replace(SOURCE_RESOURCE,/,$$DIR_SEPARATOR)
-    TARGET_RESOURCE_DIR = $$replace(TARGET_RESOURCE_DIR,/,$$DIR_SEPARATOR)
     QMAKE_PRE_LINK += $$QMAKE_MKDIR $$TARGET_RESOURCE_DIR $$escape_expand(\n\t)
     QMAKE_PRE_LINK += $$QMAKE_COPY_DIR $$SOURCE_RESOURCE $$TARGET_RESOURCE_DIR $$escape_expand(\n\t)
 }
