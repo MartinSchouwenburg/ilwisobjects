@@ -296,9 +296,9 @@ void IlwisContext::initializationFinished(bool yesno)
 QString IlwisContext::resourcesLocation(const QString &internalName) const{
     QString loc;
     if ( internalName == "")
-        loc = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/ilwis/resources";
+        loc = _ilwisDir.absoluteFilePath() + "/resources";
     else
-        loc = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/ilwis/extensions/" + internalName + "/resources";
+        loc = _ilwisDir.absoluteFilePath() + "/extensions/" + internalName + "/resources";
     return loc;
 }
 
