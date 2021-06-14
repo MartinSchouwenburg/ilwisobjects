@@ -34,6 +34,7 @@
 // THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include    <antlr3.h>
+#include    <antlr3defs.h>
 #include "bridge.h"
 
 
@@ -181,8 +182,8 @@ handshake				(pANTLR3_DEBUG_EVENT_LISTENER delboy)
 	// Connection structures to deal with the client after we accept the connection
 	// and the server while we accept a connection.
 	//
-	ANTLR3_SOCKADDRT	client;
-	ANTLR3_SOCKADDRT	server;
+    //ANTLR3_SOCKADDRT	client;
+    //ANTLR3_SOCKADDRT	server;
 
 	// Buffer to construct our message in
 	//
@@ -263,7 +264,7 @@ handshake				(pANTLR3_DEBUG_EVENT_LISTENER delboy)
 
 		// Now we can try to accept a connection on the port
 		//
-		sockaddr_len	= sizeof(client);
+        //sockaddr_len	= sizeof(client);
 //		delboy->socket	= accept(serverSocket, (pANTLR3_SOCKADDRC)&client, &sockaddr_len);
 
 		// Having accepted a connection, we can stop listening and close down the socket
