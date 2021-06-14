@@ -16,8 +16,10 @@ int main(int argc, char *argv[])
         bool scriptStatementAtBegin = false;
 
 #ifdef QT_DEBUG
+        QString expr = "file:///home/mschouwen/Documents/ilwisdata/anew{format(gdal,\"GTiff\");resolution(1)}=mapcalc(\"@1+100\",\"file:///home/mschouwen/Documents/ilwisdata/n000302.tif\")";
+         //QString expr = "abc=mapcalc(\"@1+100\", \"file:///home/mschouwen/Documents/ilwisdata/n000302.tif\");";
         //QString expr = "aaas{format(map,'ilwis3')}=linearrasterfilter(file:///d:/projects/ilwis/ilwis4/testdata/small21.mpr,\"code=0.5 0 0.5 0 1 0 0.5 0 0.5\");";
-        QString expr = "runpython(\"import ilwis\")";
+        //QString expr = "runpython(\"import ilwis\")";
 #else
         QString expr;
         // expected:
