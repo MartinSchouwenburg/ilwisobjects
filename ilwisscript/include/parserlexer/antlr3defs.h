@@ -368,7 +368,6 @@ typedef	int	SOCKET;
 #else
 
 # if defined(_AIX) || __GNUC__ > 3 
-
    typedef  socklen_t   ANTLR3_SALENT;
 
 # else
