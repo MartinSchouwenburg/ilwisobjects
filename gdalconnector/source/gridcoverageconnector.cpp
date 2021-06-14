@@ -737,8 +737,10 @@ bool RasterCoverageConnector::store(IlwisObject *obj, const IOOptions &options )
             ok= ERROR1(ERR_NO_INITIALIZED_1, "gdal Data type");
         }
     }
-
-    gdal()->close(dataset);
+    auto *proxy = gdal();
+    int dummy = -1;
+    proxy->getRasterScale(dataset, &dummy);
+    proxy->close(dataset);
 
     return ok;
 }
