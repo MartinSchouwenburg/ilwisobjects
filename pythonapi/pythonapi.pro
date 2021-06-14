@@ -27,7 +27,7 @@ linux {
         OUTPUTPATHPYTHON=/usr/local/lib/python3.8/dist-packages/
     }
 }
-message($$PYTHON_INCLUDE_FILES)
+
 INCLUDEPATH += $$PYTHON_INCLUDE_FILES
 QT += core
 
@@ -124,13 +124,13 @@ linux {
     QMAKE_POST_LINK += $$quote(cat $$PWD/include/paths.py $$PWD/include/ilwisobjects.py > $$DEST_DIR/temp.py$$escape_expand(\n\t))
     QMAKE_POST_LINK += $$QMAKE_MKDIR $${OUTPUTPATHPYTHON}ilwis $$escape_expand(\n\t)
     QMAKE_POST_LINK += mv -f $$DEST_DIR/temp.py $${OUTPUTPATHPYTHON}ilwis/__init__.py$$escape_expand(\n\t)
+    QMAKE_POST_LINK += cp -R -f  $$OUTPUTPATH/extensions/pythonapi/libpythonapi.so.1.0.0 $${OUTPUTPATHPYTHON}ilwis/_ilwisobjects.so$$escape_expand(\n\t)
     CONFIG(debug, debug|release) {
-        QMAKE_POST_LINK += cp -R -f  $$PWD/../../output/gccx64_debug/* $${OUTPUTPATHPYTHON}ilwis$$escape_expand(\n\t)
-        QMAKE_POST_LINK += cp -R -f  $$PWD/../../output/gccx64_debug/extensions/pythonapi/libpythonapi.so.1.0.0 $${OUTPUTPATHPYTHON}ilwis/_ilwisobjects.so$$escape_expand(\n\t)
+        QMAKE_POST_LINK += cp -R -f  $$OUTPUTPATH/* $${OUTPUTPATHPYTHON}ilwis$$escape_expand(\n\t)
     }
     CONFIG(release, debug|release){
         instfiles.path = $$OUTPUTPATHPYTHON/ilwis
-        instfiles.files = $$clean_path($$PWD/../../output/gccx64_release/)
+        instfiles.files = $$clean_path($$OUTPUTPATH/*)
         INSTALLS += instfiles
     }
 }
